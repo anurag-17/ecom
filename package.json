@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
     "dev": "nodemon server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install -f --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install -f --prefix frontend && npm run build --prefix frontend"
   },
   "author": "ashutosh",
   "license": "ISC",
