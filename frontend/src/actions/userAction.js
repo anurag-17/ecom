@@ -32,7 +32,7 @@ import { Typography } from "@material-ui/core";
             const config = { headers:{"Content-Type":"application/json"}}
 
             const {data}  = await axios.post ( 
-                `http://localhost:8080/api/v1/login`, 
+                `/api/v1/login`, 
                 {email,password},
                 config
                 );
@@ -63,7 +63,7 @@ import { Typography } from "@material-ui/core";
 
             const config = {headers:{"Content-Type":"multipart/form-data"}}
 
-            const {data } = await axios.post(`http://localhost:8080/api/v1/register`,userData,config)
+            const {data } = await axios.post(`/api/v1/register`,userData,config)
             
 
             dispatch({type:REGISTER_USER_SUCCESS,
@@ -87,7 +87,7 @@ import { Typography } from "@material-ui/core";
     export const loadUser = () => async(dispatch) => {
       try {
         dispatch({ type: LOAD_USER_REQUEST });
-        const {data}   = await axios.get(`http://localhost:8080/api/v1/me`);
+        const {data}   = await axios.get(`/api/v1/me`);
  
   console.log(data)
         dispatch({ type: LOAD_USER_SUCCESS, payload:data });
@@ -103,7 +103,7 @@ import { Typography } from "@material-ui/core";
 // Logout User
 export const logout = () => async (dispatch) => {
     try {
-      await axios.get(`http://localhost:8080/api/v1/logout`);
+      await axios.get(`/api/v1/logout`);
   
       dispatch({ type: LOGOUT_SUCCESS });
     } catch (error) {
@@ -120,7 +120,7 @@ export const logout = () => async (dispatch) => {
   
       const config = { headers: { "Content-Type": "multipart/form-data" } };
   
-      const { data } = await axios.put(`http://localhost:8080/api/v1/me/update`, userData, config);
+      const { data } = await axios.put(`/api/v1/me/update`, userData, config);
   
       dispatch({ type: UPDATE_PROFILE_SUCCESS, payload: data.success });
     } catch (error) {

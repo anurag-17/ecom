@@ -16,10 +16,10 @@ export const getProduct  =(keyword="",price= [0,25000],category,ratings = 0)=>as
         
       await dispatch({  type:All_PRODUCT_REQUEST})
 
-let link = `http://localhost:8080/api/v1/products?keyword = ${keyword}&page=${2}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte] = ${ratings}`
+let link = `/api/v1/products?keyword = ${keyword}&page=${2}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte] = ${ratings}`
 
 if(category){
-    link = `http://localhost:8080/api/v1/products?keyword =${keyword}&price[gte]=${price[0]}&page=${2}&price[lte]=${price[1]}&category=${category}&ratings[gte] = ${ratings}`
+    link = `/api/v1/products?keyword =${keyword}&price[gte]=${price[0]}&page=${2}&price[lte]=${price[1]}&category=${category}&ratings[gte] = ${ratings}`
 }
 
         console.log(keyword)
@@ -44,7 +44,7 @@ export const getProductDetails  =(id)=>async(dispatch)=>{
 
         dispatch({  type:PRODUCT_DETAILS_REQUEST})
 
-        const {data} = await axios.get(`http://localhost:8080/api/v1/products/${id}`)
+        const {data} = await axios.get(`/api/v1/products/${id}`)
       
         dispatch({
             type:PRODUCT_DETAILS_SUCCESS,

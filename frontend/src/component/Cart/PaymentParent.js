@@ -6,7 +6,7 @@ export const PaymentParent = () => {
 
 
     const { data } = await axios.post(
-        "http://localhost:8080/api/v1/payment/process",
+        "/api/v1/payment/process",
 
       );
   return (
