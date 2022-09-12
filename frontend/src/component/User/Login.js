@@ -185,15 +185,7 @@ onSubmit = {registerSubmit}
              />
            </div>
 
-           <div id="registerImage">
-             <img src={avatarPreview} alt="Avatar Preview" />
-             <input
-               type="file"
-               name="avatar"
-               accept="image/*" 
-               onChange={registerDataChange}
-             />
-           </div>
+
            <input type="submit" value="Register" className="signUpBtn" />
 </form>
 
